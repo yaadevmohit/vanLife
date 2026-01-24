@@ -125,23 +125,12 @@ header a:hover {
     padding-inline: 23px
 }
 
-.van-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    gap: 34px;
-    margin-top: 57px;
-}
 
 .van-tile a {
     color: #161616;
     text-decoration: none;    
 }
 
-.van-tile img {
-    max-width: 100%;
-    border-radius: 5px;
-}
 
 .van-list-container button {
     margin-right: 20px;
