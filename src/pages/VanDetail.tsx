@@ -16,9 +16,9 @@ export default function VanDetail() {
     return(
        vanData ? 
         (        
-            <div className="flex flex-col px-4 gap-2 max-w-140 m-auto">
+            <div className="flex flex-col px-4 gap-2 max-w-6xl">
                 <Link to="/vans" className="mb-4 self-start">←  <span className="border-b">Back to all vans</span></Link>
-                <img src={vanData.imageUrl} className="w-full mb-3 rounded-xl"/>
+                <img src={vanData.imageUrl} className="w-full mb-3 rounded-xl max-w-2xl"/>
                 <i className="bg-orange-500 self-start px-2 rounded text-white">{vanData.type}</i>
                 <h2 className="text-2xl font-black">
                     {vanData.name}

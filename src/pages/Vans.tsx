@@ -24,7 +24,7 @@ export default function Vans() {
             >
             <img src={van.imageUrl} className="w-full rounded-md" alt={`Image of ${van.name}`}/>
             <div className="van-info">
-                <h2 className="text-2xl">{van.name}</h2>
+                <h2 className="text-xl">{van.name}</h2>
                 <p>${van.price}<span>/day</span></p>
             </div>
             <i className={`van-type ${van.type} selected self-start`}>{van.type}</i>
@@ -33,7 +33,7 @@ export default function Vans() {
     ))
 
     return(
-        <div className="px-6">
+        <div className="px-4 max-w-6xl flex items-center justify-center flex-col">
             <h1 className="text-3xl font-bold">Explore our van options</h1>
             {vanElements 
                 ? 
@@ -45,7 +45,7 @@ export default function Vans() {
                     md:grid-cols-3 
                     lg:grid-cols-4 
                     items-center
-                    mt-14
+                    mt-4
                     "
                 >
                 {vanElements}
