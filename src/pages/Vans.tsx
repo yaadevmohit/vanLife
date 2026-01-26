@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
+import type { Van } from "../types/index"
 
-interface Van {
-    id: string
-    name: string
-    price: number
-    description: string
-    imageUrl: string
-    type: "simple" | "rugged" | "luxury"
-}
 
 export default function Vans() {
     const [vans, setVans] = useState<Van[]>([]);
