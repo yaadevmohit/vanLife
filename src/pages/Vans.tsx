@@ -4,7 +4,7 @@ import type { Van } from "../types/index"
 
 
 export default function Vans() {
-    const [vans, setVans] = useState<Van[]>([]);
+    const [vans, setVans] = useState<Van[] | null>(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -15,7 +15,7 @@ export default function Vans() {
         fetchData()
     },[])
 
-    const vanElements = vans.map((van: Van) => (
+    const vanElements = vans && vans.map((van: Van) => (
         <div key={van.id}>
             <Link 
                 to={`/vans/${van.id}`}
@@ -35,7 +35,9 @@ export default function Vans() {
     return(
         <div className="px-6">
             <h1 className="text-3xl font-bold">Explore our van options</h1>
-            <div 
+            {vanElements 
+                ? 
+            (<div 
                 className="
                     grid 
                     grid-cols-2 
@@ -47,7 +49,10 @@ export default function Vans() {
                     "
                 >
                 {vanElements}
-            </div>
+            </div>)
+            : 
+            <span className="text-2xl">Vans are showing up...</span>
+            }
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import type { Van } from "../types/index"
 
 export default function VanDetail() {
@@ -16,17 +16,18 @@ export default function VanDetail() {
     return(
        vanData ? 
         (        
-            <div className="flex flex-col justify-center px-4 gap-2">
-                <img src={vanData.imageUrl} className="max-w-2xl mb-3"/>
+            <div className="flex flex-col px-4 gap-2 max-w-140 m-auto">
+                <Link to="/vans" className="mb-4 self-start">←  <span className="border-b">Back to all vans</span></Link>
+                <img src={vanData.imageUrl} className="w-full mb-3 rounded-xl"/>
                 <i className="bg-orange-500 self-start px-2 rounded text-white">{vanData.type}</i>
                 <h2 className="text-2xl font-black">
                     {vanData.name}
                 </h2>
                 <p className="text-black"><span className="font-bold">{`$${vanData.price}`}</span>/day</p>
                 <p>{vanData.description}</p>
-                <button className="bg-[#FF8C38] rounded-sm px-4 py-2 text-white text-xl mt-2">Rent this van</button>
+                <button className="bg-[#FF8C38] rounded-sm px-4 py-2 text-white text-xl mt-2 self-stretch max-w-140">Rent this van</button>
             </div>)
         :
-        <h2>Loading...</h2>
+        <h2 className="flex text-4xl justify-center items-center">Loading...</h2>
     )
 }
