@@ -7,11 +7,11 @@ import VanDetail from "./pages/VanDetail"
 export default function App() {
   return (
     <BrowserRouter>
-      <header className="flex justify-between gap-3 px-4">
-        <Link to="/" className="text-2xl text-black font-black">#VanLife</Link>
+      <header className="w-full flex justify-between gap-3 p-2">
+        <Link to="/" className="hover:underline text-3xl font-black">#VANLIFE</Link>
         <nav className="flex gap-4 py-1">
-          <Link to="/about" className="text-xl ">About</Link>
-          <Link to="/vans" className="text-xl ">Vans</Link>
+          <Link to="/about" className="hover:underline text-xl font-bold">About</Link>
+          <Link to="/vans" className="hover:underline text-xl font-bold">Vans</Link>
         </nav>
       </header>
       <Routes>

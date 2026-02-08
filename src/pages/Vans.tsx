@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
 import type { Van } from "../types/index"
+import { typeColors } from "../utils"
 
 
 export default function Vans() {
@@ -22,19 +23,28 @@ export default function Vans() {
                 aria-label={`View details for ${van.name}, priced at $${van.price} per day`}
                 className="flex flex-col gap-3"
             >
-            <img src={van.imageUrl} className="w-full rounded-md" alt={`Image of ${van.name}`}/>
+            <img 
+                src={van.imageUrl} 
+                className="w-full rounded-md" 
+                alt={`Image of ${van.name}`}
+            />
             <div className="van-info">
                 <h2 className="text-xl">{van.name}</h2>
                 <p>${van.price}<span>/day</span></p>
             </div>
-            <i className={`van-type ${van.type} selected self-start`}>{van.type}</i>
+            <i className={`px-4 py-1 rounded-md text-white not-italic capitalize self-start ${typeColors[van.type]}`}>
+                {van.type}
+            </i>
             </Link>
         </div>
     ))
 
     return(
-        <div className="px-4 max-w-6xl flex items-center justify-center flex-col">
-            <h1 className="text-3xl font-bold">Explore our van options</h1>
+        <div className="px-4 max-w-6xl flex items-center justify-center flex-col p-2">
+            <h1 
+                className="text-2xl py-1 font-bold">
+                Explore our van options
+            </h1>
             {vanElements 
                 ? 
             (<div 

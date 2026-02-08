@@ -5,7 +5,6 @@
 
 html, body {
     margin: 0;
-    padding-bottom: 1rem;
     background-color: #FFF7ED;
     font-family: "Inter", sans-serif;
 }
@@ -17,9 +16,8 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+    margin: auto;
 }
-
-
 
 
 
