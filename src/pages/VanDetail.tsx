@@ -17,7 +17,7 @@ export default function VanDetail() {
     return(
        vanData ? 
         (        
-            <div className="flex flex-col px-4 gap-4 max-w-6xl">
+            <div className="flex flex-col px-4 gap-4 max-w-100 mx-auto">
                 <Link to="/vans" className="mb-4 self-start">
                 ←  <span className="border-b">Back to all vans</span>
                  </Link>

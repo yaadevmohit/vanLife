@@ -32,7 +32,7 @@ export default function Vans() {
                 <h2 className="text-xl">{van.name}</h2>
                 <p>${van.price}<span>/day</span></p>
             </div>
-            <i className={`px-4 py-1 rounded-md text-white not-italic capitalize self-start ${typeColors[van.type]}`}>
+            <i className={`px-4 py-1 rounded-md text-amber-200 not-italic capitalize self-start ${typeColors[van.type]}`}>
                 {van.type}
             </i>
             </Link>
