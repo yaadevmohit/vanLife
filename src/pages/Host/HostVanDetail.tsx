@@ -19,20 +19,28 @@ export default function HostVanDetail() {
                 ←  <span className="border-b">Back to all vans</span>
             </Link> 
             {vanData ?
-            <div>
-                <div className="flex">
+            <div className="bg-white p-4 flex flex-col gap-3">
+                <div className="flex gap-4 items-center">
                     <img 
                         src={vanData.imageUrl} 
-                        className="w-14 rounded-md md:w-full  max-w-2xs" 
+                        className="w-34 rounded-md md:w-full  max-w-2xs" 
                         alt={`Image of ${vanData.name}`}
                     />
-                    <div className="van-info">
-                        <i className={`px-4 py-1 rounded-md text-amber-200 not-italic capitalize self-start ${typeColors[vanData.type]}`}>
+                    <div className="van-info flex flex-col text-left gap-2">
+                        <i className={`px-4 text-xs py-1 rounded-md text-amber-200 not-italic capitalize self-start ${typeColors[vanData.type]}`}>
                             {vanData.type}
                         </i>
-                        <h2 className="text-sm font-bold">{vanData.name}</h2>
-                        <p>${vanData.price}<span>/day</span></p>
+                        <h2 className="text-lg font-bold">{vanData.name}</h2>
+                        <p><span className="font-bold">${vanData.price}</span>/day</p>
                     </div>
+                </div>
+                <div className="flex flex-col">
+                    <ul className="w-full flex gap-3 flex-wrap">
+                        <li className="text-sm text-gray-600">Details</li>
+                        <li className="text-sm text-gray-600">Pricing</li>
+                        <li className="text-sm text-gray-600">Photos</li>
+                        <li className="text-sm text-gray-600 ml-auto">icon</li>
+                    </ul>
                 </div>
             </div> 
             
