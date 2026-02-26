@@ -19,7 +19,7 @@ export default function Vans() {
     const vanElements = vans && vans.map((van: Van) => (
         <div key={van.id}>
             <Link 
-                to={`/vans/${van.id}`}
+                to={van.id}
                 aria-label={`View details for ${van.name}, priced at $${van.price} per day`}
                 className="flex flex-col gap-3"
             >

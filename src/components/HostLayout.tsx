@@ -1,40 +1,11 @@
-import { NavLink, Outlet } from "react-router-dom";
-
+import { Outlet } from "react-router-dom";
+import { hostNavbar } from "../assets/data/navbarData";
+import SubNavBar from "./SubNavBar";
 export default function HostLayout() {
-    const linkStyle = {
-        active: "underline text-md font-bold",
-        inActive: "hover:underline text-md"
-    }
     return(
-        <div className="p-4">
-            <nav className="flex gap-12">
-                <NavLink 
-                    className={({isActive}) => isActive ? linkStyle.active : linkStyle.inActive} 
-                    to="/host"
-                    end
-                >
-                    Dashboard
-                </NavLink>
-                <NavLink
-                    className={({isActive}) => isActive ? linkStyle.active : linkStyle.inActive}  
-                    to="/host/income"
-                >
-                    Income
-                </NavLink>
-                                <NavLink
-                    className={({isActive}) => isActive ? linkStyle.active : linkStyle.inActive}  
-                    to="/host/vans"
-                >
-                    Vans
-                </NavLink>
-                <NavLink 
-                    className={({isActive}) => isActive ? linkStyle.active : linkStyle.inActive} 
-                    to="/host/reviews"
-                >
-                    Reviews
-                </NavLink>
-            </nav>
-            <Outlet />
+        <div className="p-4">     
+            <SubNavBar links={hostNavbar.links} /> 
+           <Outlet />
         </div>
     )
 }

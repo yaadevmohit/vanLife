@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { type Van } from "../../types";
 import { typeColors } from "../../utils"
+import SubNavBar from "../../components/SubNavBar";
+import { hostVanDetailNavbar } from "../../assets/data/navbarData";
+
 export default function HostVanDetail() {
     const params = useParams<{ id: string }>()
     const [vanData, setVanData] = useState<Van | null>(null)
@@ -9,13 +12,14 @@ export default function HostVanDetail() {
         fetch(`/api/vans/${params.id}`)
             .then(res => res.json())
             .then(data => 
-                    {console.log(data)
-                    setVanData(data.vans)}
+                    {
+                     setVanData(data.vans)}
                 )
     },[params.id])
+
     return (
         <>
-            <Link to="/host/vans" className="py-4 block self-start">
+            <Link to=".." relative="path" className="py-4 block self-start">
                 ←  <span className="border-b">Back to all vans</span>
             </Link> 
             {vanData ?
@@ -34,14 +38,8 @@ export default function HostVanDetail() {
                         <p><span className="font-bold">${vanData.price}</span>/day</p>
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <ul className="w-full flex gap-3 flex-wrap">
-                        <li className="text-sm text-gray-600">Details</li>
-                        <li className="text-sm text-gray-600">Pricing</li>
-                        <li className="text-sm text-gray-600">Photos</li>
-                        <li className="text-sm text-gray-600 ml-auto">icon</li>
-                    </ul>
-                </div>
+                <SubNavBar links={hostVanDetailNavbar.links} endElement={hostVanDetailNavbar.endElement} className="text-md"/>
+                <Outlet />
             </div> 
             
             :
