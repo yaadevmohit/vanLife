@@ -4,10 +4,13 @@ import { type Van } from "../../types";
 import { typeColors } from "../../utils"
 import SubNavBar from "../../components/SubNavBar";
 import { hostVanDetailNavbar } from "../../assets/data/navbarData";
+import { type ContextType } from "../../types";
+
 
 export default function HostVanDetail() {
     const params = useParams<{ id: string }>()
     const [vanData, setVanData] = useState<Van | null>(null)
+
     useEffect(() => {
         fetch(`/api/vans/${params.id}`)
             .then(res => res.json())
@@ -39,7 +42,7 @@ export default function HostVanDetail() {
                     </div>
                 </div>
                 <SubNavBar links={hostVanDetailNavbar.links} endElement={hostVanDetailNavbar.endElement} className="text-md"/>
-                <Outlet />
+                <Outlet context={{vanData} satisfies ContextType}/>
             </div> 
             
             :
@@ -48,3 +51,4 @@ export default function HostVanDetail() {
         </>
   )
 }
+

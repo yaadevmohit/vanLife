@@ -14,6 +14,8 @@ import HostVanDetail from "./pages/Host/HostVanDetailLayout"
 import HostVanInfo from "./pages/Host/HostVanInfo"
 import HostVanPricing from "./pages/Host/HostVanPricing"
 import HostVanPhotos from "./pages/Host/HostVanPhotos"
+
+
 export default function App() {
   return (
     <BrowserRouter>

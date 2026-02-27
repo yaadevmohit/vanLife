@@ -6,3 +6,5 @@ export interface Van {
     imageUrl: string
     type: "simple" | "rugged" | "luxury"
 }
+
+export type ContextType = {vanData: Van | null}
